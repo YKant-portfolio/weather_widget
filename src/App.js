@@ -1,25 +1,93 @@
-import logo from './logo.svg';
+import { Component } from 'react';
+import Info from './Components/Info';
+import Form from './Components/Form';
+import Weater from './Components/Weater';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const API_KEY = "9254f20a0825f635ec64989b28f7bbdb";
+
+class App extends Component {
+
+	state = {
+		temp: undefined,
+		city: undefined,
+		country: undefined,
+		pressure: undefined,
+		sunrise: undefined,
+		sunset: undefined,
+		error: undefined,
+	}
+
+	gettingWeather = async (e) => {
+		e.preventDefault();
+		const city = e.target.elements.city.value;
+
+		if (city) {
+			const api_url = await
+				fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`).then(data => data.json());
+
+			const temp = Math.round((api_url.main.temp) - 273.15);
+			const sunrise = api_url.sys.sunrise;
+			const sunset = api_url.sys.sunset;
+			const date_sunrise = new Date();
+			const date_sunset = new Date();
+			date_sunrise.setTime(sunrise * 1000);
+			date_sunset.setTime(sunset * 1000);
+			const sunrise_date = `${date_sunrise.getHours()} : ${date_sunrise.getMinutes()} : ${date_sunrise.getSeconds()}`;
+			const sunset_date = `${date_sunset.getHours()} : ${date_sunset.getMinutes()} : ${date_sunset.getSeconds()}`;
+			const pressure = Math.round((api_url.main.pressure) * 0.750064);
+
+			this.setState({
+				temp,
+				city: api_url.name,
+				country: api_url.sys.country,
+				pressure,
+				sunrise: sunrise_date,
+				sunset: sunset_date,
+				errorForm: undefined,
+			});
+		} else {
+			this.setState({
+				temp: undefined,
+				city: undefined,
+				country: undefined,
+				pressure: undefined,
+				sunrise: undefined,
+				sunset: undefined,
+				errorForm: "Введите название города",
+			});
+		}
+	}
+
+	render() {
+		return (
+			<div className="wrapper" >
+				<div className="main">
+					<div className="container">
+						<div className="row">
+							<div className='col-xm-5'>
+								<Info />
+							</div>
+							<div className='col-xm-7'>
+								<Form weatherMetod={this.gettingWeather} />
+								<Weater
+									temp={this.state.temp}
+									city={this.state.city}
+									country={this.state.country}
+									sunrise={this.state.sunrise}
+									sunset={this.state.sunset}
+									pressure={this.state.pressure}
+									errorForm={this.state.errorForm}
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		);
+	}
 }
 
 export default App;
