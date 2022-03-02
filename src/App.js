@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import Info from './Components/Info';
-import Form from './Components/Form';
-import Weater from './Components/Weater';
+import Info from './Components/Info/Info';
+import Form from './Components/Form/Form';
+import Weater from './Components/Weater/Weater';
 
 import './App.css';
 
@@ -62,29 +62,36 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="wrapper" >
-				<div className="main">
-					<div className="container">
-						<div className="row">
-							<div className='col-xm-5'>
-								<Info />
-							</div>
-							<div className='col-xm-7'>
-								<Form weatherMetod={this.gettingWeather} />
-								<Weater
-									temp={this.state.temp}
-									city={this.state.city}
-									country={this.state.country}
-									sunrise={this.state.sunrise}
-									sunset={this.state.sunset}
-									pressure={this.state.pressure}
-									errorForm={this.state.errorForm}
-								/>
+			<div className="vh-100 wrapper" >
+				<div className="container py-5 h-100">
+					<div className="row d-flex justify-content-center align-items-center h-100">
+						<div className="col-md-10 col-lg-8 col-xl-6">
+
+							<div className="card bg-dark text-white card_style">
+								<div className="bg-image">
+									<img
+										src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
+										className="card-img"
+										alt="weather"
+									/>
+								</div>
+								<div className="card-img-overlay text-dark p-5">
+									<Info />
+									<Form weatherMetod={this.gettingWeather} />
+									<Weater
+										temp={this.state.temp}
+										city={this.state.city}
+										country={this.state.country}
+										sunrise={this.state.sunrise}
+										sunset={this.state.sunset}
+										pressure={this.state.pressure}
+										errorForm={this.state.errorForm}
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
 		);
 	}

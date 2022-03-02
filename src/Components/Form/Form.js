@@ -1,7 +1,9 @@
+import './Form.css';
+
 const Form = props => {
 	return (
 		<form onSubmit={props.weatherMetod}>
-			<input type="text" name="city" placeholder="Город (вводите латиницей)" />
+			<input className="input-Form" type="text" name="city" placeholder="Город (латиницей)" />
 			<button>получить погоду</button>
 		</form>
 	);
