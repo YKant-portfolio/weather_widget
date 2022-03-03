@@ -25,7 +25,7 @@ class App extends Component {
 
 		if (city) {
 			const api_url = await
-				fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`).then(data => data.json());
+				fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`).then(data => data.json());
 
 			const temp = Math.round((api_url.main.temp) - 273.15);
 			const sunrise = api_url.sys.sunrise;
