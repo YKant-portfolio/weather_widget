@@ -3,7 +3,7 @@ import './Weater.css'
 const Weater = (props) => {
 	const { temp, city, country, sunrise, sunset, errorForm, pressure } = props;
 	return (
-		<div className="wrapper border">
+		<div className=" border bg-white text-dark bg-opacity-50 text-center rounded-3">
 			{city &&
 				<>
 					<h4 className="mb-0 city">
