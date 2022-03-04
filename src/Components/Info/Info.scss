@@ -1,0 +1,22 @@
+.icon {
+	position: absolute;
+	top: 4%;
+	left: 75%;
+	width: 110px;
+	background-color: rgba(248, 250, 250, 0.514);
+	border-radius: 50%;
+}
+
+@media screen and (max-width: 540px) {
+	.icon {
+		top: 10%;
+		left: 75%;
+		width: 75px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.icon {
+			left: 80%;
+	}
+}

@@ -16,6 +16,7 @@ class App extends Component {
 		pressure: undefined,
 		sunrise: undefined,
 		sunset: undefined,
+		icon: undefined,
 		error: undefined,
 	}
 
@@ -26,6 +27,8 @@ class App extends Component {
 		if (city) {
 			const api_url = await
 				fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`).then(data => data.json());
+
+			console.log(api_url);
 
 			const temp = Math.round((api_url.main.temp) - 273.15);
 			const sunrise = api_url.sys.sunrise;
@@ -38,6 +41,7 @@ class App extends Component {
 			const sunset_date = `${date_sunset.getHours()} : ${date_sunset.getMinutes()} : ${date_sunset.getSeconds()}`;
 			const pressure = Math.round((api_url.main.pressure) * 0.750064);
 
+
 			this.setState({
 				temp,
 				city: api_url.name,
@@ -45,6 +49,7 @@ class App extends Component {
 				pressure,
 				sunrise: sunrise_date,
 				sunset: sunset_date,
+				icon: api_url.weather[0]['icon'],
 				errorForm: undefined,
 			});
 		} else {
@@ -55,6 +60,7 @@ class App extends Component {
 				pressure: undefined,
 				sunrise: undefined,
 				sunset: undefined,
+				icon: undefined,
 				errorForm: "Введите название города",
 			});
 		}
@@ -84,6 +90,7 @@ class App extends Component {
 										sunrise={this.state.sunrise}
 										sunset={this.state.sunset}
 										pressure={this.state.pressure}
+										icon={this.state.icon}
 										errorForm={this.state.errorForm}
 									/>
 								</div>
