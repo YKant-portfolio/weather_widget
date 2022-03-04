@@ -65,9 +65,8 @@ class App extends Component {
 			<div className="vh-100 wrapper" >
 				<div className="container py-5 h-100">
 					<div className="row d-flex justify-content-center align-items-center h-100">
-						<div className="col-md-10 col-lg-8 col-xl-6">
-
-							<div className="card bg-dark text-white card_style">
+						<div className="col-sm-12 col-md-10 col-lg-8 col-xl-6 ">
+							<div className="card bg-dark text-white ">
 								<div className="bg-image">
 									<img
 										src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
