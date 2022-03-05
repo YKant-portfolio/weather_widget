@@ -11,7 +11,7 @@ const Weater = (props) => {
 					<h4 className="mt-2 city">
 						{city} {country}
 					</h4>
-					<p className={`display-2 my-0 ${tempC}`}>{temp} °C</p>
+					<p className={`display-3 my-0 ${tempC}`}>{temp} °C</p>
 					<p className="mb-1">Восход солнца: <strong>{sunrise}</strong></p>
 					<p className="mb-1">Заход солнца: <strong>{sunset}</strong></p>
 					<h5>Давление: {pressure} мм рт. ст.</h5>
