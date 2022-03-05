@@ -17,6 +17,14 @@
 
 @media screen and (max-width: 480px) {
 	.icon {
-			left: 80%;
+		left: 80%;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.icon {
+		top: 20%;
+		left: 82%;
+		width: 55px;
 	}
 }
