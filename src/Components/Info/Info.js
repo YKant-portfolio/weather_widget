@@ -1,6 +1,6 @@
 import "./Info.scss"
 
-const Info = (props) => {
+const Info = () => {
 
 	return (
 		<div className="wrap">

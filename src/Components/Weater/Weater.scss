@@ -1,16 +1,48 @@
-.backdrop {	
+.backdrop {
 	background-color: rgba(248, 250, 250, 0.5);
 }
 
-	.temp_warm {
-		color: #df2929;
-	}
-	.temp_cool{
-		color: blue;
-	}
+.temp_warm {
+	color: #df2929;
+}
+
+.temp_cool {
+	color: blue;
+}
+
+.icon {
+	position: absolute;
+	top: 3%;
+	left: 75%;
+	width: 100px;
+	background-color: rgba(248, 250, 250, 0.514);
+	border-radius: 50%;
+}
 
 @media screen and (max-width: 540px) {
-	.backdrop {	
+	.icon {
+		top: 5%;
+		left: 75%;
+		width: 85px;
+	}
+
+	.backdrop {
 		background-color: rgba(248, 250, 250, 0.9);
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.icon {
+		top: 5%;
+		left: 75%;
+		width: 85px;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.icon {
+		top: 10%;
+		left: 75%;
+		width: 65px;
 	}
 }

@@ -9,3 +9,13 @@ body {
 	background: -moz-linear-gradient(45deg, rgb(168, 217, 213), rgb(133, 175, 221));
 	background: linear-gradient(45deg, rgb(168, 217, 213), rgb(133, 175, 221));
 }
+
+.height {
+	height: 100%;
+}
+
+@media screen and (max-width: 440px) {
+	.height {
+		height: 70%;
+	}
+}

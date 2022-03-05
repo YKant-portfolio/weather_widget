@@ -5,7 +5,7 @@ const Weater = (props) => {
 	const tempC = temp > 0 ? 'temp_warm' : 'temp_cool';
 
 	return (
-		<div className="border text-dark backdrop text-center rounded-3" >
+		<div className="border text-dark backdrop text-center rounded-2" >
 			{city &&
 				<div>
 					<h4 className="mt-2 city">

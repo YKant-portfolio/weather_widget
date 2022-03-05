@@ -3,7 +3,7 @@ import Info from './Components/Info/Info';
 import Form from './Components/Form/Form';
 import Weater from './Components/Weater/Weater';
 
-import './App.css';
+import './App.scss';
 
 const API_KEY = "9254f20a0825f635ec64989b28f7bbdb";
 
@@ -69,7 +69,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="vh-100 wrapper" >
-				<div className="container py-5 h-100">
+				<div className="container py-5 height">
 					<div className="row d-flex justify-content-center align-items-center h-100">
 						<div className="col-sm-12 col-md-10 col-lg-8 col-xl-6 ">
 							<div className="card bg-dark text-white ">
@@ -80,7 +80,7 @@ class App extends Component {
 										alt="weather"
 									/>
 								</div>
-								<div className="card-img-overlay text-dark p-5">
+								<div className="card-img-overlay text-dark p-4">
 									<Info />
 									<Form weatherMetod={this.gettingWeather} />
 									<Weater
