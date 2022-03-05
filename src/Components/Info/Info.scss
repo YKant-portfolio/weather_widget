@@ -1,8 +1,26 @@
 @media screen and (max-width: 440px) {
-	.wrap{
-		p{
-			margin-top: 15px;
+	.wrap {
+		p {
+			margin-top: 10px;
 		}
-		
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.wrap {
+		h2 {
+			font-size: 18px;
+		}
+		p {
+			font-size: 14px;
+		}
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.wrap {
+		h2 {
+			font-size: calc(1.325rem + .9vw);
+		}
 	}
 }
