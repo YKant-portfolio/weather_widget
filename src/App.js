@@ -10,14 +10,14 @@ const API_KEY = "9254f20a0825f635ec64989b28f7bbdb";
 class App extends Component {
 
 	state = {
-		temp: undefined,
-		city: undefined,
-		country: undefined,
-		pressure: undefined,
-		sunrise: undefined,
-		sunset: undefined,
-		icon: undefined,
-		error: undefined,
+		temp: null,
+		city: null,
+		country: null,
+		pressure: null,
+		sunrise: null,
+		sunset: null,
+		icon: null,
+		error: null,
 	}
 
 	gettingWeather = async (e) => {
@@ -50,17 +50,17 @@ class App extends Component {
 				sunrise: sunrise_date,
 				sunset: sunset_date,
 				icon: api_url.weather[0]['icon'],
-				errorForm: undefined,
+				errorForm: null,
 			});
 		} else {
 			this.setState({
-				temp: undefined,
-				city: undefined,
-				country: undefined,
-				pressure: undefined,
-				sunrise: undefined,
-				sunset: undefined,
-				icon: undefined,
+				temp: null,
+				city: null,
+				country: null,
+				pressure: null,
+				sunrise: null,
+				sunset: null,
+				icon: null,
 				errorForm: "Введите название города",
 			});
 		}
