@@ -25,7 +25,6 @@ class App extends Component {
 
 	onWeterLoaded = (weather) => {
 		this.setState({ weather });
-
 	}
 
 	updateWeather = (city) => {
@@ -47,8 +46,6 @@ class App extends Component {
 			})
 		}, 3000)
 	}
-
-
 
 	render() {
 		const { weather, error } = this.state;
@@ -89,7 +86,6 @@ class App extends Component {
 		);
 	}
 }
-
 
 
 export default App;
