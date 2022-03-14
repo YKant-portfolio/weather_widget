@@ -61,7 +61,7 @@ class App extends Component {
 			icon={icon}
 		/>;
 		return (
-			<div className="vh-100 wrapper" >
+			<div className="min-vh-100 vw-100 wrapper" >
 				<div className="container py-5 height">
 					<div className="row d-flex justify-content-center align-items-center h-100">
 						<div className="col-sm-12 col-md-10 col-lg-8 col-xl-6 ">
